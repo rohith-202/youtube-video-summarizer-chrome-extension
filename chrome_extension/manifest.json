@@ -1,0 +1,30 @@
+{
+    "name": "YouTube Summarizer ",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["scripting", "activeTab", "storage"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"],
+        "css" :["popup.css"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["icons/*","ButtonIcon.png"],
+        "matches": ["https://www.youtube.com/*"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png"
+      }
+    }
+  }
+  
